@@ -11,17 +11,18 @@ MakeBreakDancer.prototype.constructor = MakeBreakDancer;
 //access to this.$node was prevented because create wasn't invoked
 MakeBreakDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
-  this.$node.toggle();
 };
 
 MakeBreakDancer.prototype.spin = function() {
-
-  
-
+  MakeDancer.prototype.step.call(this);
+  (this.$node).animate({
+    left: '+=50px',
+    height: 'toggle'
+    
+  });
 };
 
 
 //replace toggle with a rotate transition
  
 //write our tests in the specFolder for new dancer
-  
