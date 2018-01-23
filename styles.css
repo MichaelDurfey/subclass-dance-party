@@ -1,17 +1,23 @@
 body, html{
   height:100%;
 }
+
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url("https://www.nycgo.com/images/venues/152/tripadvisortimessquare_taggeryanceyiv_5912__x_large.jpg");
+  background-width: 120%;
+  background-size: cover;
+  background-height: 100%;
+  background-repeat: no-repeat;
   font-size: 18px;
+  background-position: center; 
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
 .title, .addDancerButton{
   padding:5px 12px;
-  float:right;
+  float:center;
 }
 .topbar{
   height:32px;
@@ -24,4 +30,23 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+.addDancerButton{
+  font-family: times;
+  font-size: 20px;
+  font-color: white;
+  font-weight: bold;
+}
+
+.break-dancer {
+  width: 90px;
+  height: 90px;
+  transition: 1000ms ease; 
+transition-delay: 0;
+mix-blend-mode: multiply;
+ }
+
+.break-dancer:hover{
+  transform: rotate(360deg);
 }
