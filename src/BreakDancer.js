@@ -1,7 +1,8 @@
 var MakeBreakDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('div class = "breakDancer-Container"</div>')
-  this.$node.html('<div class="break-dancerContainer" <img class="break-dancer" src="sources/break-dancer.jpg"></img></div>');
+  this.$node = $('<div class ="break-dancerContainer"</div>');
+  this.$node.html('<img class="break-dancer" src="sources/break-dancer.jpg"></img>');
+  this.setPosition(top, left);
   this.spin();
 };
 
@@ -13,12 +14,26 @@ MakeBreakDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
 };
 
+// MakeBreakDancer.prototype.setPosition = function(top, left) {
+//   var styleSettings = {
+//     top: top,
+//     left: left,
+//     bottom: randomBottom,
+//     right: randomRight
+//   };
+//   this.$node.css(styleSettings);    
+// };
+
 MakeBreakDancer.prototype.spin = function() {
   MakeDancer.prototype.step.call(this);
   (this.$node).animate({
-    left: '+=100'
+    left: '+=200',
+    left: '+=20',
+    bottom: '+=10',
+    top: '+=40',
+    right: '+=40'
   }, {
-    duration: 5000,
+    duration: 1000,
     step: function( now, fx ) {
       $( this.$node).css('left', now);
     }

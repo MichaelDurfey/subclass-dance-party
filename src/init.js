@@ -31,6 +31,17 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+    window.dancers.forEach(item => {
+      console.log(item.$node[0])
+      console.log(item.$node[0].style.top);
+      console.log(item.$node[0].style.right);
+      console.log(item.$node[0].style.bottom);
+      console.log(item.$node[0].style.left);
+    });
+      
+
   });
+
 });
 

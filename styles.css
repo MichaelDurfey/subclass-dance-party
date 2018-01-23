@@ -37,19 +37,36 @@ body, a:link, a:visited, a:active{
   font-weight: bold;
 }
 
-.break-dancer {
-  width: 90px;
-  height: 90px;
-  transition: 1000ms ease; 
-transition-delay: 0;
- }
-
  .break-dancerContainer{
    width: 100px;
    height: 100px;
+    mix-blend-mode: multiply;
+    position: absolute;
+ }
+
+.break-dancer {
+  width: 90px;
+  height: 90px;
   mix-blend-mode: multiply;
+  transition: 1000ms ease; 
+  transition-delay: 0;
  }
 
 .break-dancer:hover{
   transform: rotate(360deg);
+}
+
+.tap-dancer{
+  width: 90px;
+  height: 90px;
+}
+
+.tap-dancerContainer{
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  /*transform: skew(60deg) rotate(200deg);*/
+  transition: 1000ms ease;
+  transition-delay: 0ms;
+ 
 }
