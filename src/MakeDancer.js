@@ -21,9 +21,7 @@ MakeDancer.prototype.setPosition = function(top, left) {
 
   var styleSettings = {
     top: top,
-    left: left,
-    bottom: randomBottom,
-    right: randomRight
+    left: left
   };
   this.$node.css(styleSettings);    
 };
