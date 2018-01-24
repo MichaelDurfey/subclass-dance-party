@@ -30,16 +30,26 @@ MakeBreakDancer.prototype.step = function() {
 MakeBreakDancer.prototype.spin = function() {
   MakeDancer.prototype.step.call(this);
   (this.$node).animate({
-    left: '+=200',
-    left: '+=20',
+    left: '+=500',
     bottom: '+=10',
     top: '+=40',
-    right: '+=40'
   }, {
-    duration: 1000,
-    step: function( now, fx ) {
-      $( this.$node).css('left', now);
-    }
+    duration: 3000
+  });
+  (this.$node).animate({
+    left: '-=500'
+  }, {
+    duration: 3000
+  });
+  (this.$node).animate({
+    top: '-=500'
+  }, {
+    duration: 3000
+  });
+  (this.$node).animate({
+    top: '+=500'
+  }, {
+    duration: 3000
   });
 };  
 

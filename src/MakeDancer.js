@@ -1,8 +1,8 @@
 var MakeDancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
   this.$node = $('<span class="dancer"></span>');
-  this.step();
   this.setPosition(top, left);
+  this.step();
 
 };
 
@@ -17,19 +17,20 @@ MakeDancer.prototype.step = function(timeBetweenSteps) {
   var breakTop = this.breakTop ? Number(this.breakTop.slice(0, -2)) : 1;
   var breakLeft = this.breakLeft ? Number(this.breakLeft.slice(0, -2)) : 1;
   var breakAggregate = Math.abs( Math.round(breakTop) + Math.round(breakLeft) );
-  var tapAggregate = Math.abs(tapLeft + tapTop);
+  var tapAggregate = Math.abs( Math.round(tapLeft) + Math.round(tapTop));
 
-console.log("tapLeft" , tapLeft, "tapTop", tapTop)
+  // console.log(tapAggregate, breakAggregate);
 
-  // console.log(breakAggregate, tapAggregate);
-
-  if (Math.abs(tapAggregate - breakAggregate) <= 25) {
-    console.log(this.$node);
-    $(this.$node).css({
-      transition: 'transform 0.5s',
-      transform: 'rotate(360deg)'
-    });
-  }
+  // if (Math.abs(tapAggregate - breakAggregate) <= 25) {
+  //   console.log(this.$node);
+  //   var randomLeft = Math.random() * 1000;
+  //   var randomHeight = Math.random() * 1000;
+  //   $(this.$node).css('left', randomLeft);
+  //   $(this.$node).css('top', randomHeight);
+  //   $(this.$node).animate({
+  //     transform: 'rotate(360deg)'
+  //   });
+  // }
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
@@ -37,9 +38,6 @@ console.log("tapLeft" , tapLeft, "tapTop", tapTop)
 MakeDancer.prototype.setPosition = function(top, left) {
 // Use css top and left properties to position our <span> tag
   // where it belongs on the page. See http://api.jquery.com/css/
-  var randomBottom = Math.random() * 1000;
-  var randomRight = Math.random() * 1000;
-  
 
   var styleSettings = {
     top: top,
@@ -48,9 +46,9 @@ MakeDancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);    
 };
 
-MakeDancer.prototype.calculateDistance = function() {
+// MakeDancer.prototype.calculateDistance = function() {
   
-};
+// };
 
 
 
