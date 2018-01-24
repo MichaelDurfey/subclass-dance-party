@@ -1,8 +1,9 @@
 $(document).ready(function() {
   window.dancers = [];
-
   
-
+  //store these values in variable 
+  // if (dancer[0].distanceVar - dancer[1].DistanceVar === xxxx) 
+  // do something 
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -32,15 +33,6 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
-    window.dancers.forEach(item => {
-      console.log(item.$node[0])
-      console.log(item.$node[0].style.top);
-      console.log(item.$node[0].style.right);
-      console.log(item.$node[0].style.bottom);
-      console.log(item.$node[0].style.left);
-    });
-      
-
   });
 
 });

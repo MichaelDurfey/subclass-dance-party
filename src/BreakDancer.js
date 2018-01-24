@@ -1,8 +1,10 @@
 var MakeBreakDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   this.$node = $('<div class ="break-dancerContainer"</div>');
-  this.$node.html('<img class="break-dancer" src="sources/break-dancer.jpg"></img>');
+  this.$node.html('<img class="break-dancer" src="sources/break-dancer.png"></img>');
   this.setPosition(top, left);
+  this.breakLeft = this.$node[0].style.left;
+  this.breakTop = this.$node[0].style.top;
   this.spin();
 };
 
@@ -12,6 +14,7 @@ MakeBreakDancer.prototype.constructor = MakeBreakDancer;
 //access to this.$node was prevented because create wasn't invoked
 MakeBreakDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
+  // if (Math.abs(this.positionLeft - this.positionBottom) < 25 || Math.abs(this.positionLeft-)
 };
 
 // MakeBreakDancer.prototype.setPosition = function(top, left) {
