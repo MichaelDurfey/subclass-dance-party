@@ -12,22 +12,24 @@ MakeDancer.prototype.step = function(timeBetweenSteps) {
   // it just schedules the next step
 
   
-  var tapLeft = this.tapLeft ? Number(this.tapLeft.slice(0, -2)) : 0;
-  var tapTop = this.tapTop ? Number(this.tapTop.slice(0, -2)) : 0;
-  var breakTop = this.breakTop ? Number(this.breakTop.slice(0, -2)) : 0;
-  var breakLeft = this.breakLeft ? Number(this.breakLeft.slice(0, -2)) : 0;
-  var breakAggregate = Math.abs(breakTop + breakLeft);
+  var tapLeft = this.tapLeft ? Number(this.tapLeft.slice(0, -2)) : 1;
+  var tapTop = this.tapTop ? Number(this.tapTop.slice(0, -2)) : 1;
+  var breakTop = this.breakTop ? Number(this.breakTop.slice(0, -2)) : 1;
+  var breakLeft = this.breakLeft ? Number(this.breakLeft.slice(0, -2)) : 1;
+  var breakAggregate = Math.abs( Math.round(breakTop) + Math.round(breakLeft) );
   var tapAggregate = Math.abs(tapLeft + tapTop);
+
+console.log("tapLeft" , tapLeft, "tapTop", tapTop)
 
   // console.log(breakAggregate, tapAggregate);
 
-//   if (Math.abs(topAggregate - breakAggregate) <= 25) {
-// console.log(this.$node)
-//     $(this.$node).css({
-//       transition: 'transform 0.5s',
-//       transform: 'rotate(360deg)'
-//     });
-//   }
+  if (Math.abs(tapAggregate - breakAggregate) <= 25) {
+    console.log(this.$node);
+    $(this.$node).css({
+      transition: 'transform 0.5s',
+      transform: 'rotate(360deg)'
+    });
+  }
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 

@@ -15,7 +15,7 @@ TapDancer.prototype.constructor = TapDancer;
 //access to this.$node was prevented because create wasn't invoked
 TapDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
-  this.spin();
+console.log(this.tapLeft, this.tapTop)
 };
 
 TapDancer.prototype.spin = function() {
@@ -25,7 +25,7 @@ TapDancer.prototype.spin = function() {
   $(this.$node).on('mouseover', function() {
     $(this).fadeIn(100).fadeOut(100);
   });
-  $( this.$node).css('left', randomLeft);
+  $(this.$node).css('left', randomLeft);
   $(this.$node).css('top', randomHeight);
   $(this.$node).animate({
     bottom: '+=150',
